@@ -1,0 +1,24 @@
+{% extends 'layouts.html' %}
+{% load static %}
+
+{% block content %}
+<section class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="{% url 'store:login' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control mt-3" placeholder="username" name="username">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control mt-3" placeholder="AccountId" name="account_id">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control mt-3" name="password" placeholder="password">
+                </div>
+                <button class="btn btn-outline-white mt-3 btn-success shadow-none" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
